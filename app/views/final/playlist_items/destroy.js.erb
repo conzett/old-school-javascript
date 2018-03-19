@@ -1,0 +1,8 @@
+<%= hide @playlist_item %>	
+<%= render_flash message: 'Deleted', partial: 'application/flash_undo',
+  link: button_to('Undo', reorder_destroyed_playlist_item_path(@playlist_item,
+    playlist_item: { destroyed_at: nil }),
+  data: { disable_with: 'Restoring…' },
+  class: 'btn btn-link',
+  method: :patch,
+  remote: true) %>

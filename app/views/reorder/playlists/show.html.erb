@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">Reordering</div>
+    <div class="col-9">
+      <table class="table table-hover table-striped table-sm">
+        <tbody data-reorderable="<%= reorder_playlist_playlist_items_path @playlist %>"
+               id="playlist_items">
+          <%= render @playlist.playlist_items.order :position %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= render partial: 'reorder/playlist_items/form', locals: {
+    playlist_item: [:reorder, @playlist, PlaylistItem.new] } %>
+</div>

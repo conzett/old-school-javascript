@@ -1,0 +1,33 @@
+<div class="slide">
+  <h1>Remote Destroy</h1>
+
+  <div class="code">
+    playlist_items/_playlist_item.js.erb
+    <br/><br/>
+
+    Was
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <td class="text-right">
+        <%%= link_to '&times;',
+          [playlist_item.playlist, playlist_item],
+          method: :delete %>
+      </td>
+    </code>
+    <br/><br/>
+
+    Change to
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <td class="text-right">
+        <%%= button_to '&times;', [playlist_item.playlist, playlist_item],<br/>
+        &nbsp;&nbsp;data: { disable_with: '…' },<br/>
+        &nbsp;&nbsp;method: :delete,<br/>
+        &nbsp;&nbsp;<strong>remote: true</strong> %>
+      </td>
+    </code>
+    <br/><br/>
+  </div>
+</div>

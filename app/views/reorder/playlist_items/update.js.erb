@@ -1,0 +1,10 @@
+<% if @playlist_item.attribute_previously_changed? :position %>
+  var content ='<%= j render(@playlist_item.siblings.order :position) %>'
+  var node = document.getElementById('playlist_items').cloneNode(true);
+  node.innerHTML = content;
+  document.getElementById('playlist_items').replaceWith(node);
+  makeReorderable()
+  <%= render_flash message: 'Reordered' %>
+<% else %>
+  <%= render_flash message: 'Updated' %>
+<% end %>

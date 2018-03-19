@@ -1,0 +1,25 @@
+<div class="slide">
+  <h1>Remote Create</h1>
+
+  <div class="code">
+    playlist_items/create.js.erb
+
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      var <strong>content</strong> = '<%%= <strong>j</strong> render @playlist_item %>'
+      <br/>
+
+      <br/>
+      document <br/>
+      &nbsp;&nbsp;.getElementById('playlist_items') <br/>
+      &nbsp;&nbsp;.<strong>insertAdjacentHTML</strong>('beforeend', <strong>content</strong>)
+      <br/>
+      <br/>
+
+      document<br/>
+      &nbsp;&nbsp;.querySelector('[action$="/playlist_items"]')<br/>
+      &nbsp;&nbsp;.reset()<br/>
+    </code>
+  </div>
+</div>

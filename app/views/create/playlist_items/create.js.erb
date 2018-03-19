@@ -1,0 +1,9 @@
+var content = '<%= j render @playlist_item %>'
+
+document
+  .getElementById('playlist_items')
+  .insertAdjacentHTML('beforeend', content)
+
+document
+  .querySelector('[action$="/playlist_items"]')
+  .reset()

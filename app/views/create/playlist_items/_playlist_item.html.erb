@@ -1,0 +1,10 @@
+<tr id="<%= playlist_item.html_id %>">
+  <td><%= playlist_item.position %></td>
+  <td><%= playlist_item.playlistable.try :name %></td>
+  <td><%= playlist_item.duration %></td>
+  <td class="text-right">
+    <%= link_to raw('&times;'),
+      [:create, playlist_item.playlist, playlist_item],
+      method: :delete %>
+  </td>
+</tr>

@@ -1,0 +1,31 @@
+<%= form_with model: playlist_item do |form| %>
+  <div class="form-group">
+    <%= form.label :duration %>
+    <%= form.text_field :duration,
+      id: :playlist_item_duration,
+      class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%# form.label :poster_id %>
+    <%# form.select(
+      :poster_id, poster_choices, { include_blank: true },
+      { class: 'form-control', id: :poster_id }) %>
+    <%= form.label :poster_name %>
+    <%= form.text_field :poster_name,
+	    data: { datalist: final_posters_path },
+	    list: :poster_names,
+	    class: 'form-control' %>
+    <datalist id="poster_names">
+      <% Poster.first(3).each do |poster| %>
+        <option value="<%= poster.name %>"></option>
+      <% end %>
+    </datalist>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit(
+      data: { disable_with: 'Submitting' },
+      class: 'btn btn-primary') %>
+  </div>
+<% end %>

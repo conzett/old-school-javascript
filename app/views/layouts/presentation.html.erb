@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Old School Javascript</title>
+    <%# options = { data: { 'turbolinks-track': :reload } } %>
+    <%# csrf_meta_tags %>
+    <%= stylesheet_link_tag :presentation %>
+    <%# javascript_include_tag :application, options %>
+  </head>
+  <body>
+    <%= yield %>
+    <script>
+      function navigate(i) {
+        var result = window.location.href.split('?index=')
+        var currentPage = parseInt(result[1] || 0, 10)
+        var nextPage = Math.max(currentPage + i, 0);
+        window.location.href = result[0] + '?index=' + nextPage
+      }
+    </script>
+    <div id="slide-navigation">
+      <button onClick="navigate(-1)">Prev</button>
+      <button onClick="navigate(+1)">Next</button>
+    </div>
+  </body>
+</html>

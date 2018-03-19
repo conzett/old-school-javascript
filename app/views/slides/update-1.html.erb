@@ -1,0 +1,28 @@
+<div class="slide">
+  <h1>Inline Updates</h1>
+
+  <div class="code">
+    playlist_items/_playlist_item.js.erb
+    <br/><br/>
+
+    Was
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <td><%%= playlist_item.duration %></td>
+    </code>
+    <br/><br/>
+
+    Change to
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <td>
+        <%%= form_with(model: [playlist_item.playlist, playlist_item] do |f| %><br/>
+        &nbsp;&nbsp;<%%= f.label :duration, class: 'sr-only' %><br/> 
+        &nbsp;&nbsp;<%%= f.text_field :duration, size: 3 %><br/>
+        <%% end %>
+      </td>
+    </code>
+  </div>
+</div>

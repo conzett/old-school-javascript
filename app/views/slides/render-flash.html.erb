@@ -1,0 +1,15 @@
+<div class="slide">
+  <h1>Render Flash</h1>
+
+  <div class="code">
+    helpers/application_helper.rb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      def render_flash(partial: 'application/flash_notice', **locals)<br/>
+      &nbsp;&nbsp;html = j render partial: partial, locals: locals<br/>
+      &nbsp;&nbsp;raw "document.getElementById('flash').innerHTML = '#{html}'"<br/>
+      end
+    </code>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+class Reorder::DestroyedPlaylistItemsController < DestroyedPlaylistItemsController
+end

@@ -1,0 +1,22 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+
+iframe {
+ border: 0;
+ height: 93vh;
+ width: 100%; 
+}
+
+#slide-navigation {
+  background: darkgray;
+  text-align: center;
+  flex: auto;
+}

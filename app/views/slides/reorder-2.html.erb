@@ -1,0 +1,21 @@
+<div class="slide">
+  <h1>Reordering</h1>
+
+  <div class="code">
+    playlists/update.html.erb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <%% if @playlist_item<strong>.attribute_previously_changed? :position</strong> %><br/>
+      &nbsp;&nbsp;var content ='<%%= j render(@playlist_item.siblings.order :position) %>'<br/>  
+      &nbsp;&nbsp;var node = document.getElementById('playlist_items').cloneNode(true);<br/>  
+      &nbsp;&nbsp;node.innerHTML = content;<br/>  
+      &nbsp;&nbsp;document.getElementById('playlist_items').replaceWith(node);<br/>  
+      &nbsp;&nbsp;<strong>makeReorderable()</strong><br/>  
+      &nbsp;&nbsp;<%%= render_flash <strong>message: 'Reordered'</strong> %><br/>  
+      <%% else %><br/>  
+      &nbsp;&nbsp;<%%= render_flash <strong>message: 'Updated'</strong> %><br/>
+      <%% end %><br/>
+    </code>
+  </div>
+</div>

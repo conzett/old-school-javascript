@@ -1,0 +1,23 @@
+<div class="slide">
+  <h1>Reordering</h1>
+
+  <div class="code">
+    playlists/show.html.erb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      &lt;tbody <strong>data-reorderable="<%%= playlist_playlist_items_path @playlist %>"</strong>
+      <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id="playlist_items"&gt;<br/>
+      &nbsp;&nbsp;<%%= render @playlist.playlist_items<strong>.order :position</strong>%><br/>
+      &lt;/tbody&gt;<br/><br/>
+    </code>
+
+    playlists/_playlist_item.html.erb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      &lt;tr id="<%%= playlist_item.html_id %>" <strong>draggable="true"</strong>&gt;
+    </code>
+  </div>
+</div>

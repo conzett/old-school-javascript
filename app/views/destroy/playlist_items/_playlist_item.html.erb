@@ -1,0 +1,13 @@
+<tr id="<%= playlist_item.html_id %>">
+  <td><%= playlist_item.position %></td>
+  <td><%= playlist_item.playlistable.try :name %></td>
+  <td><%= playlist_item.duration %></td>
+  <td class="text-right">
+    <%= button_to raw('&times;'),
+      [:destroy, playlist_item.playlist, playlist_item],
+      data: { disable_with: '…' },
+      class: 'btn btn-link',
+      method: :delete,
+      remote: true %>
+  </td>
+</tr>

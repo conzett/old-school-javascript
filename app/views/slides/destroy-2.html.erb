@@ -1,0 +1,23 @@
+<div class="slide">
+  <h1>Remote Destroy</h1>
+
+  <div class="code">
+    playlist_items/destroy.js.erb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <%%= hide @playlist_item %><br/>
+      <%%= render_flash message: 'Deleted' %>
+    </code>
+    <br/><br/>
+
+    helpers/application_helper.rb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      def hide(model)<br/>
+      &nbsp;&nbsp;raw "document.getElementById('#{model.html_id}').style.display = 'none'"<br/>
+      end
+    </code>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+class Undo::DestroyedPlaylistItemsController < DestroyedPlaylistItemsController
+end

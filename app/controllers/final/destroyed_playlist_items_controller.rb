@@ -1,0 +1,2 @@
+class Final::DestroyedPlaylistItemsController < DestroyedPlaylistItemsController
+end

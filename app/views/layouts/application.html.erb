@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Old-school JavaScript in Rails</title>
+    <% options = { data: { 'turbolinks-track': :reload } } %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag :application, options %>
+    <%= javascript_include_tag :application, options %>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <a class="navbar-brand" href="#">Old-school JavaScript in Rails</a>
+    </nav>
+    <div class="container">
+      <div id="flash" class="mb-3">
+        <% if flash[:notice] %>
+          <%= render partial: 'flash_notice', locals: {
+            message: flash[:notice] } %>
+        <% end %>
+      </div>
+    </div>
+    <%= yield %>
+  </body>
+</html>

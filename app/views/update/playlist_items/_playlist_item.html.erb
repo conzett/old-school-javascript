@@ -1,0 +1,22 @@
+<tr id="<%= playlist_item.html_id %>">
+  <td><%= playlist_item.position %></td>
+  <td><%= playlist_item.playlistable.try :name %></td>
+  <td>
+    <%= form_with(model: [:update, playlist_item.playlist, playlist_item]) do |f| %>
+      <%= f.label :duration, class: 'sr-only' %>
+      <%= f.text_field :duration,
+	        id: :playlist_item_duration,
+	        autocomplete: :off,
+	        class: 'form-control',
+          size: 3 %>
+    <% end %>
+  </td>
+  <td class="text-right">
+    <%= button_to raw('&times;'),
+      [:update, playlist_item.playlist, playlist_item],
+      data: { disable_with: '…' },
+      class: 'btn btn-link',
+      method: :delete,
+      remote: true %>
+  </td>
+</tr>

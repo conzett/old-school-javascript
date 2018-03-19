@@ -1,0 +1,23 @@
+<div class="slide">
+  <h1>Remote Create</h1>
+
+  <div class="code">
+    Create Form
+    <br/>
+    <br/>
+    <code style="font-size: 110%">
+      <%%= form_with model: playlist_item, <strike><strong>local: true</strong>
+      </strike>do |form| %>
+        <br/>
+      <%% end %>
+    </code>
+
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <%%= form_with model: playlist_item do |form| %>
+        <br/>
+      <%% end %>
+    </code>
+  </div>
+</div>

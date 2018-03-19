@@ -1,0 +1,18 @@
+<div class="slide">
+  <h1>Copy</h1>
+
+  <div class="code">
+    playlist_items/_playlist_item.html.erb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      &lt;td class="text-right"&gt;<br/>
+        &nbsp;&nbsp;<%%= button_to 'Copy',<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;polymorphic_path([playlist_item.playlist, :playlist_items],<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;playlist_item: <strong>playlist_item.copy_attrs</strong>),<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;data: { disable_with: '…' },<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>method: :create</strong>,<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;remote: true %><br/>
+    </code>
+  </div>
+</div>

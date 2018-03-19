@@ -1,0 +1,19 @@
+<div class="slide">
+  <h1>Soft Deletes</h1>
+
+  <div class="code">
+    destroyed_playlist_items_controller.rb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      def set_playlist_item<br/>
+      &nbsp;&nbsp;@playlist_item = PlaylistItem.unscoped<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;.where.not(destroyed_at: nil).find params[:id]<br/>
+      end<br/>
+      <br/>
+      def playlist_item_params<br/>
+      &nbsp;&nbsp;params.require(:playlist_item).permit :destroyed_at<br/>
+      end
+    </code>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="slide">
+  <h1>Undo Functionality</h1>
+
+  <div class="code">
+    playlist_items/destroy.js.erb
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      <%%= hide @playlist_item %><br/><br/>
+      <%% link = button_to('Undo',<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;destroyed_playlist_item_path(@playlist_item, <strong>playlist_item: { destroyed_at: nil }</strong>),<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;data: { disable_with: 'Restoring…' },<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;class: 'btn btn-link',<br/> 
+      &nbsp;&nbsp;&nbsp;&nbsp;method: <strong>:patch</strong>,<br/> 
+      &nbsp;&nbsp;&nbsp;&nbsp;remote: true) %><br/>
+      <br/>
+      <%%= render_flash message: 'Deleted', partial: 'application/flash_undo', link: link %>
+    </code>
+  </div>
+</div>

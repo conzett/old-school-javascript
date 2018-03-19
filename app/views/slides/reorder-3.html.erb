@@ -1,0 +1,28 @@
+<div class="slide">
+  <h1>Reordering</h1>
+
+  <div class="code">
+    reorderable.js
+    <br/><br/>
+
+    <code style="font-size: 110%">
+      function allowDrop(event) {<br/>
+      &nbsp;&nbsp;event.preventDefault();<br/>
+      }<br/>
+      <br/>
+      function setData(event) {<br/>
+      &nbsp;&nbsp;event.dataTransfer.setData("text", event.target.id);<br/>
+      }<br/>
+      <br/>
+      function <strong>makeReorderable()</strong> {<br/>
+      &nbsp;&nbsp;if (node = document.querySelector('[data-reorderable]')) {<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;node.addEventListener("dragstart", setData);<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;node.addEventListener("dragover", allowDrop);<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;node.addEventListener("drop", <strong>reorder</strong>);<br/>
+      &nbsp;&nbsp;}<br/>
+      }<br/>
+      <br/>
+      document.addEventListener("turbolinks:load", <strong>makeReorderable</strong>)<br/>
+    </code>
+  </div>
+</div>

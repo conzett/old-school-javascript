@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">Undo Example</div>
+    <div class="col-9">
+      <table class="table table-hover table-striped table-sm">
+        <tbody id="playlist_items">
+          <%= render @playlist.playlist_items.order :position %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= render partial: 'undo/playlist_items/form', locals: {
+    playlist_item: [:undo, @playlist, PlaylistItem.new] } %>
+</div>
